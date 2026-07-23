@@ -2,7 +2,7 @@ import { useConsole } from './../ConsoleContext/ConsoleContext'
 import styles from './Console.module.css'
 
 function Console() {
-  const { lines, consoleRef } = useConsole()
+  const { lines, consoleRef, currentPath } = useConsole()
 
   return (
     <section className={styles.console} ref={consoleRef}>
@@ -12,7 +12,7 @@ function Console() {
             <span className={styles.dot} data-color="red" />
             <span className={styles.dot} data-color="yellow" />
             <span className={styles.dot} data-color="green" />
-            <span className={styles.terminalTitle}>guest@portfolio: ~</span>
+            <span className={styles.terminalTitle}>guest@portfolio: {currentPath}</span>
           </div>
 
           <div className={styles.terminalBody}>
@@ -22,7 +22,7 @@ function Console() {
                 return (
                   <p className={styles.line} key={i}>
                     <span className={styles.prompt}>guest@portfolio</span>
-                    <span className={styles.tilde}>:~$</span>
+                    <span className={styles.tilde}>:{line.path}$</span>
                     <span>{line.text}</span>
                     {isLast && <span className={styles.cursor}>_</span>}
                   </p>
@@ -45,7 +45,7 @@ function Console() {
             {lines.length === 0 && (
               <p className={styles.line}>
                 <span className={styles.prompt}>guest@portfolio</span>
-                <span className={styles.tilde}>:~$</span>
+                <span className={styles.tilde}>:{currentPath}$</span>
                 <span className={styles.cursor}>_</span>
               </p>
             )}

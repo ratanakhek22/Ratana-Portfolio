@@ -22,6 +22,7 @@ function App() {
       </ConsoleProvider>
       <Profile />
       <Skills />
+      <Divider />
       <Contact />
     </>
   )

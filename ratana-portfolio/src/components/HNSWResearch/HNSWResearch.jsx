@@ -13,7 +13,7 @@ function HnswPreview() {
       </p>
 
       <div className={styles.actions}>
-        <a href="https://github.com/ratanakhek22/CS546_ResearchProject" className={styles.primaryBtn}>GitHub Repo</a>
+        <a target="_blank" href="https://github.com/ratanakhek22/CS546_ResearchProject" className={styles.primaryBtn}>GitHub Repo</a>
       </div>
     </div>
   )

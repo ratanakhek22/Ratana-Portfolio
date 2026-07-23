@@ -1,0 +1,39 @@
+.previewCard {
+  margin: 0 0 20px 0; 
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: var(--bg-elevated);
+}
+
+.project {
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 1.4vw, 3rem);
+  color: var(--text-primary);
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+}
+
+.content {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin: 0 0 1.75rem;
+  line-height: 1.6;
+}
+
+.primaryBtn {
+  display: inline-block; /* or just `block` if it should take its own full-width line */
+  font-family: var(--font-mono);
+  padding: 0.65rem 1.3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.15s ease;
+  background: var(--accent-primary);
+  color: var(--bg-base);
+}
+
+.primaryBtn:hover{
+  opacity: 0.8;
+}
