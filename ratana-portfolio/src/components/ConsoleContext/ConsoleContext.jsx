@@ -1,6 +1,7 @@
 // ConsoleContext.jsx
 import { createContext, useContext, useRef, useState, useCallback } from 'react'
 import { projectScripts } from './../../data/projectScripts'
+import styles from './ConsoleContext.module.css'
 
 const ConsoleContext = createContext(null)
 

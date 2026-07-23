@@ -4,6 +4,7 @@
   height: 650px;
   margin: 0 auto;
   display: flex;
+  scroll-margin-top: 90px
 }
 
 .terminalColumn {
