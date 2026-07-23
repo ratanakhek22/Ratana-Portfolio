@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-sans: 'Inter', -apple-system, sans-serif;
+
+  --bg-base: #0a0a0a;
+  --bg-surface: #141414;
+  --bg-elevated: #242424;
+  --bg-recessed: #050505;
+  --border: #1f1f1f;
+
+  --text-primary: #e8e8e8;
+  --text-muted: #8a8a8a;
+
+  --accent-primary: #00d9ff;
+  --accent-secondary: #ffb800;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}

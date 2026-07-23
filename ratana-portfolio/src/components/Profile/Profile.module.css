@@ -1,0 +1,20 @@
+.profile {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.heading {
+  user-select: none;
+  font-family: var(--font-sans);
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin: 0;
+}

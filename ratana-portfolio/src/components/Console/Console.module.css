@@ -1,0 +1,98 @@
+.console {
+  padding: 0 2rem 5rem 2rem;
+  max-width: 1100px;
+  height: 650px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.terminalColumn {
+  flex: 1 1 520px;
+  display: flex;
+}
+
+.terminal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.7rem 1rem;
+  background: #1a1a1a;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot[data-color="red"] {
+  background: #ff5f56;
+}
+
+.dot[data-color="yellow"] {
+  background: #ffbd2e;
+}
+
+.dot[data-color="green"] {
+  background: #27c93f;
+}
+
+.terminalTitle {
+  user-select: none;
+  margin-left: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.terminalBody {
+  flex: 1;
+  padding: 1.75rem 2rem 2rem;
+  font-family: var(--font-mono);
+}
+
+.line {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.prompt {
+  user-select: none;
+  color: var(--accent-secondary);
+}
+
+.tilde {
+  user-select: none;
+  color: var(--text-muted);
+  margin-right: 0.4rem;
+}
+
+.cursor {
+  user-select: none;
+  display: inline-block;
+  margin-left: 4px;
+  color: var(--accent-primary);
+  animation: blink 1s step-start infinite;
+}
+
+.command {
+  user-select: none;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
