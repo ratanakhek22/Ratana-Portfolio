@@ -1,8 +1,8 @@
-import { useConsole } from './../ConsoleContext/ConsoleContext'
+import { usePortfolio } from '../../context/PortfolioProvider'
 import styles from './Console.module.css'
 
 function Console() {
-  const { lines, consoleRef, currentPath } = useConsole()
+  const { lines, consoleRef, currentPath } = usePortfolio()
 
   return (
     <section className={styles.console} ref={consoleRef}>

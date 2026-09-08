@@ -1,7 +1,30 @@
 .contact {
   padding: 3rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
   text-align: center;
   border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.divideLine {
+  flex: 0 0 1px;
+  background: var(--border);
+}
+
+.contentLeft,
+.contentRight {
+  flex: 1;
+  display: flex;
+}
+
+.contentLeft {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
@@ -11,6 +34,7 @@
 }
 
 .blurb {
+  font-family: var(--font-sans);
   color: var(--text-primary);
   opacity: 0.7;
   margin-bottom: 1.5rem;
@@ -56,4 +80,33 @@
 
 .resumeBtn:hover {
   opacity: 0.8;
+}
+
+.iconList {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-primary);
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.iconLink:hover {
+  opacity: 0.7;
+  border-color: var(--accent-primary);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
 }

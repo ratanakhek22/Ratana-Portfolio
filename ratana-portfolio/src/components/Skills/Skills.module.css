@@ -5,7 +5,6 @@
 }
 
 .header {
-  display: flex;
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 1.5rem;
@@ -17,4 +16,180 @@
   font-size: 1.8rem;
   color: var(--text-primary);
   margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  transition: gap 0.4s ease;
+}
+
+.pillBox {
+  flex: 2;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.pill {
+  flex-grow: 0;
+  min-width: 4rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.pillActive {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.console {
+  flex: 0 0 0%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: var(--bg-recessed);
+  border-radius: 8px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+  transition: flex-basis 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              max-height 1.2s ease,
+              opacity 0.8s ease,
+              border-left-width 1.2s ease;
+}
+
+.consoleOpen {
+  flex: 0 0 50%;
+  max-height: 600px;
+  opacity: 1;
+  border-left-width: 1px;
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.7rem 1rem;
+  background: #1a1a1a;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot[data-color="red"] { background: #ff5f56; }
+.dot[data-color="yellow"] { background: #ffbd2e; }
+.dot[data-color="green"] { background: #27c93f; }
+
+.terminalTitle {
+  margin-left: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.closeBtn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+}
+
+.closeBtn:hover {
+  color: var(--text-primary);
+}
+
+.terminal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.terminalBody {
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.line {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.prompt {
+  user-select: none;
+  color: var(--accent-secondary);
+}
+
+.tilde {
+  user-select: none;
+  color: var(--text-muted);
+  margin-right: 0.4rem;
+}
+
+.emptyState {
+  color: var(--text-muted);
+}
+
+.skillBlock {
+  margin-bottom: 1.5rem;
+}
+
+.skillBlock:last-child {
+  margin-bottom: 0;
+}
+
+.blurb {
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+
+.usedIn {
+  color: var(--accent-primary);
+  margin: 0;
+}
+
+/* One necessary addition to .content — a transition + gap, not a visual change */
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  transition: gap 0.4s ease;
+}
+
+.contentOpen {
+  gap: 2rem;
 }

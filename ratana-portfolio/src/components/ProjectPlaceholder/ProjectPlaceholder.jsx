@@ -1,4 +1,3 @@
-// components/HnswPreview/HnswPreview.jsx
 import styles from './ProjectPlaceholder.module.css'
 
 function ProjectPlaceholder({ projectName, gitURL }) {

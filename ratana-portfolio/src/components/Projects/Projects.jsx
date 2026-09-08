@@ -1,20 +1,12 @@
 import { useState } from 'react'
-import { useConsole } from '../ConsoleContext/ConsoleContext'
+import { usePortfolio } from '../../context/PortfolioProvider'
 import styles from './Projects.module.css'
-
-const PROJECTS = [
-  { id: 1, key: 'hnswResearch', title: 'HNSW Insertion Research', blurb: 'A benchmarking tool comparing HNSW insertion methods for approximate nearest neighbor search. Tests recall, latency, and relevance tradeoffs across any BEIR datasets.', tech: ['Python', 'Batch'] },
-  { id: 2, key: 'greenhouseSim', title: 'Greenhouse Temperature Simulation', blurb: 'A full-stack simulation tool for passive solar greenhouse design, pairing physics-based thermal calculations with an in-progress ML model for inverse design and predictive analysis.', tech: ['Python', 'FastAPI', 'React'] },
-  { id: 3, key: 'parallelMPISort', title: 'Parallel Sorting with MPI', blurb: 'A parallel sorting benchmark in C using MPI, comparing blocking vs. nonblocking approaches across 6 processes with automated multi-run performance testing.', tech: ['C', 'Bash'] },
-  { id: 4, key: 'oracleLens', title: 'Oracle Lens - AI Coach (Hackathon)', blurb: 'An AI coach for League of Legends that analyzes your first 10 minutes of gameplay via Riot API and AWS Bedrock, delivering role-aware, personalized feedback.', tech: ['AWS Bedrock', 'HTML/CSS', 'Python', 'Flask'] },
-  { id: 5, key: 'lockStateMachine', title: 'Digital Lock State Machine', blurb: 'A digit-sequence lock simulator built as a finite-automaton state machine in Python, with a Tkinter GUI and a terminal-based brute-force tester for estimating break time.', tech: ['Python'] },
-  { id: 6, key: 'budgetTracker', title: 'Chase Morgan Budget Tracker', blurb: 'A Django-based personal finance and budgeting web app with dedicated pages for tracking finances and spending categories.', tech: ['Django', 'SQL'] },
-]
+import { PROJECTS } from '../../data/projects'
 
 const PAGE_SIZE = 4
 
 function Projects() {
-  const { runProject, isRunning } = useConsole()
+  const { runProject, isRunning, selectSkillsForProject } = usePortfolio()
 
   const [page, setPage] = useState(0)
   const totalPages = Math.ceil(PROJECTS.length / PAGE_SIZE)
@@ -67,16 +59,27 @@ function Projects() {
               <div key={project.id} className={styles.cardPlaceholder} />
             ) : (
               <div key={project.id} className={styles.card}>
-                <h3 className={styles.cardTitle}>{project.title}</h3>
+                <h3 className={styles.cardTitle} onClick={() => {
+                  selectSkillsForProject(project)
+                  runProject(project)
+                }}>
+                  {project.title}
+                </h3>
                 <p className={styles.cardBlurb}>{project.blurb}</p>
                 <div className={styles.tags}>
                   {project.tech.map((tech) => (
-                    <span key={tech} className={styles.tag}>{tech}</span>
+                    <button
+                      key={tech}
+                      className={styles.tag}
+                      onClick={() => selectSkillsForProject(project)}
+                    >
+                      {tech}
+                    </button>
                   ))}
                 </div>
                 <button
                   className={styles.runBtn}
-                  onClick={() => runProject(project.key)}
+                  onClick={() => runProject(project)}
                   disabled={isRunning}
                   >
                   {'$ run →'}
