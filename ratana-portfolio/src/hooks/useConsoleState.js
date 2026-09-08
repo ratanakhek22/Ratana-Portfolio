@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback } from 'react'
-import { wait, typeCommand } from "../utils/consoleUtils"
+import { wait, typeCommand } from "../utils/ConsoleUtils"
 
 export function useConsoleState() {
   const [lines, setLines] = useState([])
