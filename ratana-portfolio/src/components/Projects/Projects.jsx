@@ -1,70 +1,34 @@
-import { useState } from 'react'
+import { PROJECTS } from '../../data/projects'
 import { usePortfolio } from '../../context/PortfolioProvider'
 import styles from './Projects.module.css'
-import { PROJECTS } from '../../data/projects'
-
-const PAGE_SIZE = 4
 
 function Projects() {
-  const { runProject, isRunning, selectSkillsForProject } = usePortfolio()
+  const { runProject, selectSkillsForProject } = usePortfolio()
 
-  const [page, setPage] = useState(0)
-  const totalPages = Math.ceil(PROJECTS.length / PAGE_SIZE)
-
-  const visibleProjects = PROJECTS.slice(
-    page * PAGE_SIZE,
-    page * PAGE_SIZE + PAGE_SIZE
-  )
-
-  const paddedProjects = [
-    ...visibleProjects,
-    ...Array.from(
-      { length: PAGE_SIZE - visibleProjects.length },
-      (_, i) => ({ id: `placeholder-${i}`, placeholder: true })
-    ),
-  ]
-
-  function goToPage(index) {
-    if (index < 0 || index >= totalPages) return
-    setPage(index)
+  function handleRun(project) {
+    selectSkillsForProject(project, { scroll: false })
+    runProject(project)
   }
 
   return (
     <section className={styles.projects} id="projects">
       <div className={styles.header}>
         <h2 className={styles.heading}>Projects</h2>
-        {page !== 0 && (
-          <button className={styles.backLink} onClick={() => goToPage(0)}>
-            {'← back to page 1'}
-          </button>
-        )}
-        <span className={styles.pageIndicator}>
-          page {page + 1} of {totalPages}
-        </span>
+        <span className={styles.hintText}>scroll for more ↓</span>
       </div>
 
-      <div className={styles.container}>
-        <button
-          className={styles.arrowBtn}
-          onClick={() => goToPage(page - 1)}
-          disabled={page === 0}
-          aria-label="Previous page"
-        >
-          {'<'}
-        </button>
-
+      <div className={styles.scrollArea}>
         <div className={styles.grid}>
-          {paddedProjects.map((project) => 
-            project.placeholder ? (
-              <div key={project.id} className={styles.cardPlaceholder} />
-            ) : (
-              <div key={project.id} className={styles.card}>
-                <h3 className={styles.cardTitle} onClick={() => {
-                  selectSkillsForProject(project)
-                  runProject(project)
-                }}>
-                  {project.title}
-                </h3>
+          {PROJECTS.map((project) => (
+            <div key={project.id} className={styles.card}>
+              <div className={styles.cardHeader} onClick={() => handleRun(project)}>
+                <span className={styles.dot} data-color="red" />
+                <span className={styles.dot} data-color="yellow" />
+                <span className={styles.dot} data-color="green" />
+                <h3 className={styles.cardTitle}>{project.title}</h3>
+              </div>
+
+              <div className={styles.cardBody}>
                 <p className={styles.cardBlurb}>{project.blurb}</p>
                 <div className={styles.tags}>
                   {project.tech.map((tech) => (
@@ -77,28 +41,14 @@ function Projects() {
                     </button>
                   ))}
                 </div>
-                <button
-                  className={styles.runBtn}
-                  onClick={() => runProject(project)}
-                  disabled={isRunning}
-                  >
+                <p className={styles.hint}>press to run a live demo in the console below</p>
+                <button className={styles.runBtn} onClick={() => handleRun(project)}>
                   {'$ run →'}
                 </button>
-                {page === 0 ? (
-                  <p className={styles.hint}>press to run a live demo in the console below</p>
-                ) : (<></>)}
               </div>
+            </div>
           ))}
         </div>
-
-        <button
-          className={styles.arrowBtn}
-          onClick={() => goToPage(page + 1)}
-          disabled={page === totalPages - 1}
-          aria-label="Next page"
-        >
-          {'>'}
-        </button>
       </div>
     </section>
   )
