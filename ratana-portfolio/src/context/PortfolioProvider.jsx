@@ -1,15 +1,17 @@
-import { createContext, useContext, useRef, useState, useCallback } from 'react'
-import { useConsoleState } from '../hooks/useConsoleState.js'
-import { useSkillsState } from '../hooks/useSkillsState.js'
+import { createContext, useContext } from 'react'
+import { useConsoleState } from '../hooks/useConsoleState'
+import { useSkillsState } from '../hooks/useSkillsState'
+import { useNavState } from '../hooks/useNavState'
 
 const PortfolioContext = createContext(null)
 
 export function PortfolioProvider({ children }) {
   const consoleState = useConsoleState()
   const skillsState = useSkillsState()
+  const navState = useNavState()
 
   return (
-    <PortfolioContext.Provider value={{ ...consoleState, ...skillsState }}>
+    <PortfolioContext.Provider value={{ ...consoleState, ...skillsState, ...navState }}>
       {children}
     </PortfolioContext.Provider>
   )

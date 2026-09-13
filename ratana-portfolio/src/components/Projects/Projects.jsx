@@ -11,7 +11,7 @@ function Projects() {
   }
 
   return (
-    <section className={styles.projects} id="projects">
+    <section id="projects" className={styles.projects}>
       <div className={styles.header}>
         <h2 className={styles.heading}>Projects</h2>
         <span className={styles.hintText}>scroll for more ↓</span>

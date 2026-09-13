@@ -1,10 +1,12 @@
-import { useEffect, useRef } from 'react'
 import styles from './Hero.module.css'
 import myPhoto from '../../assets/Selfie_Temp.jpeg'
+import { usePortfolio } from '../../context/PortfolioProvider'
 
 function Hero() {
+  const { openNav } = usePortfolio()
+
   return (
-    <section className={styles.hero}>
+    <section id="hero" className={styles.hero}>
       <div className={styles.content}>
         <div className={styles.terminalColumn}>
           <div className={styles.terminal}>
@@ -32,6 +34,9 @@ function Hero() {
                 <a href="#projects" className={styles.primaryBtn}>View projects</a>
                 <a href="/files/SWE Resume Sovannratana Khek.pdf" className={styles.secondaryBtn} download>Resume</a>
                 <a href="#contact" className={styles.secondaryBtn}>Contact</a>
+                <button className={styles.secondaryBtn} onClick={openNav}>
+                  Nav ▸
+                </button>
               </div>
 
               <p className={styles.line}>

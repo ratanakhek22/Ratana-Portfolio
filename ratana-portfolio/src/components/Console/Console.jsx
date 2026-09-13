@@ -5,7 +5,7 @@ function Console() {
   const { lines, consoleRef, currentPath } = usePortfolio()
 
   return (
-    <section className={styles.console} ref={consoleRef}>
+    <section id="console" className={styles.console} ref={consoleRef}>
       <div className={styles.terminalColumn}>
         <div className={styles.terminal}>
           <div className={styles.terminalBar}>

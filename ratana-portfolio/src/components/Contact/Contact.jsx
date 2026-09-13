@@ -37,7 +37,7 @@ const LINKS = [
 
 function Contact() {
   return (
-    <section className={styles.contact} id="contact">
+    <section id="contact" className={styles.contact}>
       {/* Left Flex Element */}
       <div className={styles.contentLeft}>
         <h2 className={styles.heading}>Contact</h2>
