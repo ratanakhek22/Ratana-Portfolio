@@ -10,13 +10,24 @@
   --bg-surface: #141414;
   --bg-elevated: #242424;
   --bg-recessed: #050505;
+  --bg-terminal-bar: #1a1a1a;
+
   --border: #1f1f1f;
 
   --text-primary: #e8e8e8;
   --text-muted: #8a8a8a;
+  --text-output: #e6edf3;
 
   --accent-primary: #00d9ff;
   --accent-secondary: #ffb800;
+ 
+  --status-error: #ff5f56;
+  --status-warning: #ffbd2e;
+  --status-success: #27c93f;
+
+  --bg-code: #0d1117;      /* the .container background */
+  --bg-code-alt: #151b23;  /* the zebra-stripe row background */
+  --border-code: #3d444d;  /* the table border color, distinct from --border */
 }
 
 body {

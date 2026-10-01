@@ -39,7 +39,7 @@
   min-width: 4rem;
   font-size: 1rem;
   font-family: var(--font-sans);
-  background: #1a1a1a;
+  background: var(--bg-terminal-bar);
   border: 1px solid var(--border);
   border-radius: 999px;
   height: 2.5rem;
@@ -98,9 +98,9 @@
   border-radius: 50%;
 }
 
-.dot[data-color="red"] { background: #ff5f56; }
-.dot[data-color="yellow"] { background: #ffbd2e; }
-.dot[data-color="green"] { background: #27c93f; }
+.dot[data-color="red"] { background: var(--status-error); }
+.dot[data-color="yellow"] { background: var(--status-warning); }
+.dot[data-color="green"] { background: var(--status-success); }
 
 .terminalTitle {
   margin-left: 8px;

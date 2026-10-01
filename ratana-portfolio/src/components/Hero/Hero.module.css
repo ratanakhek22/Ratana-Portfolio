@@ -33,7 +33,7 @@
   align-items: center;
   gap: 8px;
   padding: 0.7rem 1rem;
-  background: #1a1a1a;
+  background: var(--bg-terminal-bar);
   border-bottom: 1px solid var(--border);
 }
 
@@ -43,17 +43,9 @@
   border-radius: 50%;
 }
 
-.dot[data-color="red"] {
-  background: #ff5f56;
-}
-
-.dot[data-color="yellow"] {
-  background: #ffbd2e;
-}
-
-.dot[data-color="green"] {
-  background: #27c93f;
-}
+.dot[data-color="red"] { background: var(--status-error); }
+.dot[data-color="yellow"] { background: var(--status-warning); }
+.dot[data-color="green"] { background: var(--status-success); }
 
 .terminalTitle {
   user-select: none;

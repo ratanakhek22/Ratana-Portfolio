@@ -9,7 +9,7 @@ const STATUS_LABEL = {
 
 function Education() {
   return (
-    <section className={styles.education} id="education">
+    <section id="education" className={styles.education}>
       <h2 className={styles.heading}>Education</h2>
 
       <div className={styles.introRow}>

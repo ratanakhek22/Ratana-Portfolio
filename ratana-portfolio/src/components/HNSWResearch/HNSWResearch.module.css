@@ -23,7 +23,7 @@
 }
 
 .primaryBtn {
-  display: inline-block; /* or just `block` if it should take its own full-width line */
+  display: inline-block; 
   font-family: var(--font-mono);
   padding: 0.65rem 1.3rem;
   border-radius: 4px;
@@ -36,4 +36,51 @@
 
 .primaryBtn:hover{
   opacity: 0.8;
+}
+
+.container {
+  background: var(--bg-code);
+  color: var(--text-output);
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.heading {
+  margin: 0 0 16px;
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  font-weight: 600;
+  border-bottom: 1px solid #3d444d;
+}
+
+.insertionTable {
+  width: 100%;
+  background: #0d1117;
+  border-collapse: collapse;
+  font-size: 15px;
+  color: #e6edf3;
+  margin-bottom: 28px;
+}
+
+.insertionTable th,
+.insertionTable td {
+  border: 1px solid var(border-code);
+  background: transparent;
+  padding: 6px 13px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.insertionTable th {
+  font-weight: 600;
+  text-align: center;
+}
+
+.insertionTable tbody tr:nth-child(even) td {
+  background: var(--bg-code-alt);
+}
+
+.insertionTable th:first-child,
+.insertionTable td:first-child {
+  width: 20%;
 }

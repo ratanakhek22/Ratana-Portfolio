@@ -27,7 +27,7 @@
   align-items: center;
   gap: 8px;
   padding: 0.7rem 1rem;
-  background: #1a1a1a;
+  background: var(--bg-terminal-bar);
   border-bottom: 1px solid var(--border);
 }
 
@@ -37,9 +37,9 @@
   border-radius: 50%;
 }
 
-.dot[data-color="red"] { background: #ff5f56; }
-.dot[data-color="yellow"] { background: #ffbd2e; }
-.dot[data-color="green"] { background: #27c93f; }
+.dot[data-color="red"] { background: var(--status-error); }
+.dot[data-color="yellow"] { background: var(--status-warning); }
+.dot[data-color="green"] { background: var(--status-success); }
 
 .terminalTitle {
   user-select: none;
@@ -53,12 +53,44 @@
   flex: 1;
   padding: 1.75rem 2rem 2rem;
   font-family: var(--font-mono);
+  overflow-y: auto;
+}
+
+.terminalBody::-webkit-scrollbar {
+  width: 12px;
+}
+
+.terminalBody::-webkit-scrollbar-track {
+  background: var(--accent-primary);
+  border-radius: 999px;
+  box-shadow: 0 0 6px var(--accent-primary), 0 0 12px var(--accent-primary);
+}
+
+.terminalBody::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border: 2px solid var(--accent-primary);
+  border-radius: 999px;
+}
+
+.terminalBody::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-surface);
+}
+
+.terminalBody {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-recessed);
 }
 
 .line {
   margin: 0 0 1rem;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.lineOutput {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-output);
 }
 
 .prompt {

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 
 import PortfolioProvider from './context/PortfolioProvider'
@@ -9,8 +8,8 @@ import Projects from './components/Projects/Projects'
 import Console from './components/Console/Console'
 import Contact from './components/Contact/Contact'
 import Skills from './components/Skills/Skills'
-import Profile from './components/Profile/Profile'
 import Education from './components/Education/Education'
+import Experience from './components/Experience/Experience'
 import Nav from './components/Nav/Nav'
 
 function App() {
@@ -25,6 +24,8 @@ function App() {
         <Console />
         <Divider />
         <Skills />
+        <Divider />
+        <Experience />
         <Divider />
         <Education />
         <Divider />

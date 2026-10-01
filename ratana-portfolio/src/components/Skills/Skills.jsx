@@ -5,13 +5,13 @@ import { usePortfolio } from '../../context/PortfolioProvider'
 import styles from './Skills.module.css'
 
 function Skills() {
-  const { selectedSkills, selectSkill, selectSkillsForProject, clearSelectedSkills } = usePortfolio()
+  const { selectedSkills, selectSkill, selectSkillsForProject, clearSelectedSkills, skillsRef } = usePortfolio()
   const grouped = groupSkillsByCategory(SKILLS)
   const selectedList = SKILLS.filter((s) => selectedSkills.has(s.name))
   const categoryCount = Object.keys(grouped).length
 
   return (
-    <section className={styles.skills} id="skills">
+    <section className={styles.skills} id="skills" ref={skillsRef}>
       <div className={styles.header}>
         <h2 className={styles.heading}>Skills</h2>
       </div>

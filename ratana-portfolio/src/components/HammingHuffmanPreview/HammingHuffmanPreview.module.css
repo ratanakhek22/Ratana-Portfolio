@@ -1,0 +1,117 @@
+.previewCard {
+  margin: 0 0 20px 0; 
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: var(--bg-elevated);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: var(--font-mono);
+}
+
+.project {
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 1.4vw, 3rem);
+  color: var(--text-primary);
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+}
+
+.content {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: var(--bg-code);
+}
+
+.table th {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  border-bottom: 1px solid var(--border-code);
+  text-transform: lowercase;
+}
+
+.table td {
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--border-code);
+  background: transparent;
+  vertical-align: top;
+}
+
+.table tbody tr:nth-child(even) td {
+  background: var(--bg-code-alt);
+}
+
+.stageCell {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.valueCell code {
+  color: var(--text-primary);
+  word-break: break-all;
+  display: inline;
+}
+
+.metaCell {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.toggleBtn {
+  display: block;
+  margin-top: 0.3rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.68rem;
+  color: var(--text-output);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.toggleBtn:hover {
+  opacity: 1;
+  color: var(--accent-primary);
+}
+
+.rowWarn .stageCell,
+.rowWarn .valueCell code {
+  color: var(--status-error);
+}
+
+.rowOk .stageCell,
+.rowOk .valueCell code {
+  color: var(--status-success);
+}
+
+.primaryBtn {
+  display: inline-block; 
+  font-family: var(--font-mono);
+  padding: 0.65rem 1.3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.15s ease;
+  background: var(--accent-primary);
+  color: var(--bg-base);
+}
+
+.primaryBtn:hover{
+  opacity: 0.8;
+}

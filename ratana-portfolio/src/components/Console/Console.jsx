@@ -36,7 +36,7 @@ function Console() {
                 )
               }
               return (
-                <p className={styles.line} key={i}>
+                <p className={styles.lineOutput} key={i}>
                   {line.text}
                 </p>
               )
