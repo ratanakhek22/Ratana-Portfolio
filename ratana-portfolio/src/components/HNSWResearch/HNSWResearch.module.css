@@ -64,7 +64,7 @@
 
 .insertionTable th,
 .insertionTable td {
-  border: 1px solid var(border-code);
+  border: 1px solid var(--border-code);
   background: transparent;
   padding: 6px 13px;
   text-align: left;
