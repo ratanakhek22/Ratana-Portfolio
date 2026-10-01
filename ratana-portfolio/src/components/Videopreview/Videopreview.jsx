@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './VideoPreview.module.css'
+import styles from './Videopreview.module.css'
 
 // Mirrors PdfPreview's structure exactly: a crisp thumbnail with a text
 // overlay panel (not a blurred image), opening a modal — here with a
