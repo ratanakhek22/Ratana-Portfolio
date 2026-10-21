@@ -1,0 +1,94 @@
+.previewCard {
+  margin: 0 0 20px 0;
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: var(--bg-elevated);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: var(--font-mono);
+}
+
+.project {
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 1.4vw, 3rem);
+  color: var(--text-primary);
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+}
+
+.content {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: var(--bg-code);
+}
+
+.table th {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  border-bottom: 1px solid var(--border-code);
+  text-transform: lowercase;
+}
+
+.table td {
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--border-code);
+  background: transparent;
+  vertical-align: top;
+}
+
+.table tbody tr:nth-child(even) td {
+  background: var(--bg-code-alt);
+}
+
+.stageCell {
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.metaCell {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.rowWarn .stageCell,
+.rowWarn .metaCell {
+  color: var(--status-warning);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.primaryBtn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  padding: 0.65rem 1.3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.15s ease;
+  background: var(--accent-primary);
+  color: var(--bg-base);
+}
+
+.primaryBtn:hover {
+  opacity: 0.8;
+}

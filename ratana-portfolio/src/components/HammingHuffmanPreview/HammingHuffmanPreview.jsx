@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import PipelineDiagram from './PipelineDiagram'
+import PipelineDiagram from '../PipelineDiagram/PipelineDiagram'
 import VideoPreview from '../Videopreview/Videopreview'
 import styles from './HammingHuffmanPreview.module.css'
 

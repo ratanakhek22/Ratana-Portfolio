@@ -49,8 +49,24 @@
   resize: none;
 }
 
+/* bot trap: off-screen, not display:none, since some bots skip hidden fields */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
 .sendBtn {
-  align-self: flex-start;
   font-family: var(--font-sans);
   padding: 0.65rem 1.3rem;
   border: none;
@@ -64,4 +80,30 @@
 
 .sendBtn:hover {
   opacity: 0.8;
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.status {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.statusSuccess {
+  color: var(--status-success);
+}
+
+.statusError {
+  color: var(--status-error);
+}
+
+.fallbackLink {
+  color: inherit;
+  text-decoration: underline;
 }
