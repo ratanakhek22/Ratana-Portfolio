@@ -3,6 +3,7 @@ import ProjectPlaceholder from '../components/ProjectPlaceholder/ProjectPlacehol
 import HammingHuffmanPreview from '../components/HammingHuffmanPreview/HammingHuffmanPreview'
 import OracleLensPreview from '../components/OracleLensPreview/OracleLensPreview'
 import LockPreview from '../components/LockPreview/LockPreview'
+import PortfolioPreview from '../components/PortfolioPreview/PortfolioPreview'
 
 export const PROJECTS = [
   {
@@ -62,7 +63,7 @@ export const PROJECTS = [
     script: [
       { type: 'command', text: 'cd Projects/portfolio' },
       { type: 'command', text: 'info portfolio' },
-      { type: 'element', content: <ProjectPlaceholder projectName="SWE Career Portfolio" /> },
+      { type: 'element', content: <PortfolioPreview /> },
       { type: 'command', text: 'clear' },
     ],
   },
@@ -108,7 +109,7 @@ export const PROJECTS = [
     key: 'greenhouseSim',
     title: 'Greenhouse Temperature Simulation',
     blurb: 'A full-stack simulation tool for passive solar greenhouse design, pairing physics-based thermal calculations with an in-progress ML model for inverse design and predictive analysis.',
-    tech: ['Python', 'FastAPI', 'React', 'MangoDB', 'Git'],
+    tech: ['Python', 'FastAPI', 'React', 'MongoDB', 'Git'],
     script: [
       { type: 'command', text: 'cd Projects/greenhouseSim' },
       { type: 'command', text: 'info greenhouseSim' },
